@@ -3,9 +3,9 @@
 .icon {
   position: relative;
   display: inline-block;
-  width: 12em;
-  height: 6em;
-  font-size: 1.7em; /* control icon size here */
+  width: 6em;
+  height: 3em;
+  font-size: 0.7em; /* control icon size here */
 }
 
 .cloud {
