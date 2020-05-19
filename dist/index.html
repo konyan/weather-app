@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="shortcut icon" href="./img/banner-img.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>My Weather</title>
+  </head>
+
+  <body>
+    <section class="weather">
+      <div class="card">
+        <div class="hide">
+          <div class="card__heading">
+            <h2 class="card__heading--place">Botahtaung</h2>
+            <h4 class="card__heading--country">Myanmar</h4>
+          </div>
+          <div class="card__description">
+            <div class="card__description--icon-group">
+              <div class="card__description--icon icon sun-shower hide drizzle">
+                <div class="cloud"></div>
+                <div class="sun">
+                  <div class="rays"></div>
+                </div>
+                <div class="rain"></div>
+              </div>
+
+              <div
+                class="card__description--icon icon thunder-storm hide thunderstorm"
+              >
+                <div class="cloud"></div>
+                <div class="lightning">
+                  <div class="bolt"></div>
+                  <div class="bolt"></div>
+                </div>
+              </div>
+
+              <div class="card__description--icon icon cloudy hide clouds">
+                <div class="cloud"></div>
+                <div class="cloud"></div>
+              </div>
+
+              <div class="card__description--icon icon flurries hide snow">
+                <div class="cloud"></div>
+                <div class="snow">
+                  <div class="flake"></div>
+                  <div class="flake"></div>
+                </div>
+              </div>
+
+              <div class="card__description--icon icon sunny hide clear">
+                <div class="sun">
+                  <div class="rays"></div>
+                </div>
+              </div>
+
+              <div class="card__description--icon icon rainy hide rain">
+                <div class="cloud"></div>
+                <div class="rain"></div>
+              </div>
+            </div>
+
+            <p class="card__description--des">Sunny</p>
+          </div>
+          <div class="card__footer">
+            <p class="card__footer--temp">79</p>
+            <p class="card__footer--deg">°C</p>
+          </div>
+        </div>
+        <div class="loader">
+          <span>{</span>
+          <span>}</span>
+        </div>
+      </div>
+    </section>
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
