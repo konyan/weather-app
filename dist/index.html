@@ -17,14 +17,10 @@
   <body>
     <section class="weather">
       <div class="card">
-        <div class="hide">
-          <div class="card__heading">
-            <h2 class="card__heading--place">Botahtaung</h2>
-            <h4 class="card__heading--country">Myanmar</h4>
-          </div>
+        <div>
           <div class="card__description">
             <div class="card__description--icon-group">
-              <div class="card__description--icon icon sun-shower hide drizzle">
+              <div class="card__description--icon icon sun-shower drizzle">
                 <div class="cloud"></div>
                 <div class="sun">
                   <div class="rays"></div>
@@ -66,18 +62,21 @@
                 <div class="rain"></div>
               </div>
             </div>
-
             <p class="card__description--des">Sunny</p>
+          </div>
+          <div class="card__heading">
+            <h2 class="card__heading--place">Botahtaung</h2>
+            <h4 class="card__heading--country">Myanmar</h4>
           </div>
           <div class="card__footer">
             <p class="card__footer--temp">79</p>
             <p class="card__footer--deg">°C</p>
           </div>
         </div>
-        <div class="loader">
+        <!-- <div class="loader hide">
           <span>{</span>
           <span>}</span>
-        </div>
+        </div> -->
       </div>
     </section>
     <script src="js/bundle.js"></script>

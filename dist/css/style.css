@@ -8,22 +8,32 @@ body {
   overflow: hidden;
   background-color: #333;
   overflow: hidden;
+  font-family: "Roboto Slab", serif;
   color: white;
 }
 
 .weather {
-  width: 24rem;
-  height: 40rem;
-  margin: 50vh auto;
-  transform: translateY(-50%);
-  /* transform: translate(-50%,0%); */
+  width: 26rem;
+  height: 48rem;
+  margin: 40vh auto;
+  transform: translateY(-40%);
+  position: relative;
 }
 
 .weather .card {
-  padding: 1.8rem;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom left, #1976d2, #0d47a1);
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #ece9e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #ece9e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
@@ -44,31 +54,53 @@ body {
 .card__description {
   display: block;
   position: relative;
-  height: 15rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
 }
 .card__description--icon-group {
   display: block;
   position: relative;
-  margin-bottom: 5rem;
+  width: 500px;
+  height: 500px;
+  border-radius: 250px;
+  background: #2980b9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #6dd5fa,
+    #2980b9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #6dd5fa,
+    #2980b9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  transform: translate(-250px, -250px);
 }
+
 .card__description--icon {
   text-align: center;
   position: relative;
   vertical-align: middle;
+  position: absolute;
+  bottom: 16%;
+  right: 24%;
   margin-top: 4rem;
   margin-bottom: 5rem;
   display: inline-block;
+  box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.4);
 }
+
 .card__description--des {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   text-align: center;
-  font-weight: 300;
+  font-weight: 500;
   position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 40%;
+  right: 60%;
+  transform: translateX(-30%);
 }
 
 .card__footer {
@@ -104,7 +136,7 @@ body {
 
 .loader {
   color: #fff;
-  font-family: Consolas, Menlo, Monaco, monospace;
+  font-family: "Roboto Slab", serif;
   font-weight: bold;
   font-size: 10vh;
   opacity: 0.8;
