@@ -7,13 +7,10 @@ var tempIsF = false;
 const geoFunction = (e) => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
-      console.log("POS", position);
       const lat = "lat=" + position.coords.latitude;
       const lon = "lon=" + position.coords.longitude;
-      console.log("LAT", lat, lon);
       let response = api(lat, lon);
       response.then((res) => {
-        console.log(res);
         getData(res);
       });
     });
@@ -25,7 +22,7 @@ const geoFunction = (e) => {
 const changeDeg = () => {
   tempIsF = !tempIsF;
 
-  var deg = parseInt(tempDOM.innerHTML);
+  var deg = parseInt(DOM.tempBody.innerHTML);
   var change = 0;
   var changeChar = "°C";
 
@@ -41,7 +38,7 @@ const changeDeg = () => {
 };
 
 const getData = ({ data, status }) => {
-  if (status == "success") {
+  if (status == 200) {
     // $(".card>div").removeClass("hide");
     // $(".loader").addClass("hide");
     var weatherObj = data;
@@ -50,8 +47,14 @@ const getData = ({ data, status }) => {
     var weatherCountry = data["sys"]["country"];
     var weatherPlace = data["name"];
     weatherCountry = country(weatherCountry);
+    console.log(weatherCountry);
 
     DOM.tempBody.innerHTML = parseInt(weatherTemp);
+    DOM.countryHead.innerHTML = weatherCountry;
+    DOM.placeHead.innerHTML =
+      `<i class="card__heading--icon"> <img src="./img/place.png" alt="place" /> </i>` +
+      weatherPlace;
+    DOM.desDescription.innerHTML = weatherDes;
 
     // $(".card__description--des").text(weatherDes);
     // IconGen(weatherDes);
