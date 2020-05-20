@@ -10,6 +10,23 @@ body {
   overflow: hidden;
   font-family: "Roboto Slab", serif;
   color: white;
+  text-align: center;
+}
+
+#find-me {
+  position: absolute;
+  padding: 16px 12px;
+  font-size: 18px;
+  font-family: "Roboto Slab", serif;
+  border-radius: 100px;
+  width: 200px;
+  top: 1%;
+  font-weight: 500;
+  color: #333;
+  transform: translate(-100px);
+  cursor: pointer;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
 }
 
 .weather {
@@ -147,7 +164,7 @@ body {
 
 .card__body {
   display: block;
-  text-align: left;
+  text-align: center;
   margin: 2rem 2rem 0 2rem;
   z-index: 99;
 }
