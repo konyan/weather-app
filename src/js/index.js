@@ -1,31 +1,16 @@
 import api from "./api";
 import country from "./countries";
 import IconGen from "./weather";
-import { DOM } from "./dom";
+import DOM from "./dom";
 
-var tempIsF = false;
-
-const geoFunction = (e) => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      const lat = "lat=" + position.coords.latitude;
-      const lon = "lon=" + position.coords.longitude;
-      let response = api(lat, lon);
-      response.then((res) => {
-        getData(res);
-      });
-    });
-  } else {
-    alert("Your browser doesn't supoort geo location.");
-  }
-};
+let tempIsF = false;
 
 const changeDeg = () => {
   tempIsF = !tempIsF;
 
-  var deg = parseInt(DOM.tempBody.innerHTML);
-  var change = 0;
-  var changeChar = "°C";
+  let deg = parseInt(DOM.tempBody.innerHTML);
+  let change = 0;
+  let changeChar = "°C";
 
   if (tempIsF) {
     change = (deg * 9) / 5 + 32;
@@ -42,11 +27,11 @@ const getData = ({ data, status }) => {
   if (status == 200) {
     // $(".card>div").removeClass("hide");
     // $(".loader").addClass("hide");
-    var weatherObj = data;
-    var weatherDes = data["weather"][0]["main"];
-    var weatherTemp = data["main"]["temp"];
-    var weatherCountry = data["sys"]["country"];
-    var weatherPlace = data["name"];
+    let weatherObj = data;
+    let weatherDes = data["weather"][0]["main"];
+    let weatherTemp = data["main"]["temp"];
+    let weatherCountry = data["sys"]["country"];
+    let weatherPlace = data["name"];
     weatherCountry = country(weatherCountry);
     console.log(weatherCountry);
 
@@ -65,6 +50,21 @@ const getData = ({ data, status }) => {
   }
 };
 
+const geoFunction = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const lat = `lat=${position.coords.latitude}`;
+      const lon = `lon=${position.coords.longitude}`;
+      const response = api(lat, lon);
+      response.then((res) => {
+        getData(res);
+      });
+    });
+  } else {
+    alert("Your browser doesn't supoort geo location.");
+  }
+};
+
 DOM.findmeButton.addEventListener("click", geoFunction);
 DOM.degBody.addEventListener("click", changeDeg);
 
@@ -79,60 +79,3 @@ const init = () => {
 };
 
 init();
-
-// $(document).ready(function () {
-//   var tempIsF = false;
-//   var lat;
-//   var lon;
-
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(function (position) {
-//       lat = "lat=" + position.coords.latitude;
-//       lon = "lon=" + position.coords.longitude;
-//       getData(lat, lon);
-//     });
-//   } else {
-//     alert("Your browser doesn't supoort geo location.");
-//   }
-
-//   $(".card__footer--deg").click(function () {
-//     tempIsF = !tempIsF;
-//     var deg = parseInt($(".card__footer--temp").text());
-//     var changeNum = 0;
-//     var changeChar = "°C";
-
-//     if (tempIsF) {
-//       change = (deg * 9) / 5 + 32;
-//       changeChar = "°F";
-//     } else {
-//       change = (deg - 32) / 1.8;
-//       changeChar = "°C";
-//     }
-//     $(".card__footer--temp").text(parseInt(change));
-//     $(".card__footer--deg").text(changeChar);
-//   });
-// });
-
-// function getData(lat, lon) {
-//   $.get(api + lat + "&" + lon, function (data, status) {
-//     if (status == "success") {
-//       $(".card>div").removeClass("hide");
-//       $(".loader").addClass("hide");
-
-//       var weatherObj = data;
-//       var weatherDes = data["weather"][0]["main"];
-//       var weatherTemp = data["main"]["temp"];
-//       var weatherCountry = data["sys"]["country"];
-//       var weatherPlace = data["name"];
-
-//       if (isoCountries.hasOwnProperty(weatherCountry)) {
-//         weatherCountry = isoCountries[weatherCountry];
-//       }
-//       $(".card__description--des").text(weatherDes);
-//       IconGen(weatherDes);
-//       $(".card__footer--temp").text(parseInt(weatherTemp));
-//       $(".card__heading--place").text(weatherPlace);
-//       $(".card__heading--country").text(weatherCountry);
-//     }
-//   });
-// }
