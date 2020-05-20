@@ -17,7 +17,8 @@
   <body>
     <section class="weather">
       <div class="card">
-        <div>
+        <div class="card__wrapper">
+          <div class="card__whity"></div>
           <div class="card__description">
             <div class="card__description--icon-group">
               <div class="card__description--icon icon sun-shower drizzle">
@@ -65,13 +66,33 @@
             <p class="card__description--des">Sunny</p>
           </div>
           <div class="card__heading">
-            <h2 class="card__heading--place">Botahtaung</h2>
+            <h2 class="card__heading--place">
+              <i class="card__heading--icon">
+                <img src="./img/place.png" alt="place" /> </i
+              >Botahtaung
+            </h2>
             <h4 class="card__heading--country">Myanmar</h4>
           </div>
-          <div class="card__footer">
-            <p class="card__footer--temp">79</p>
-            <p class="card__footer--deg">°C</p>
+          <div class="card__body">
+            <p class="card__body--temp">79</p>
+            <p class="card__body--deg">°C</p>
           </div>
+          <!-- <div class="card__footer">
+            <ul>
+              <li class="card__footer--item">
+                <div class="card__description--icon icon sun-shower drizzle">
+                  <div class="cloud"></div>
+                  <div class="sun">
+                    <div class="rays"></div>
+                  </div>
+                  <div class="rain"></div>
+                </div>
+                Today
+              </li>
+              <li class="card__footer--item">Firday</li>
+              <li class="card__footer--item">Saturday</li>
+            </ul>
+          </div> -->
         </div>
         <!-- <div class="loader hide">
           <span>{</span>
