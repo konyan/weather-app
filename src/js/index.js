@@ -1,5 +1,6 @@
 import api from "./api";
 import country from "./countries";
+import IconGen from "./weather";
 import { DOM } from "./dom";
 
 var tempIsF = false;
@@ -57,7 +58,7 @@ const getData = ({ data, status }) => {
     DOM.desDescription.innerHTML = weatherDes;
 
     // $(".card__description--des").text(weatherDes);
-    // IconGen(weatherDes);
+    IconGen("rain");
     // $(".card__footer--temp").text(parseInt(weatherTemp));
     // $(".card__heading--place").text(weatherPlace);
     // $(".card__heading--country").text(weatherCountry);

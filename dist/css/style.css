@@ -127,8 +127,8 @@ body {
   position: relative;
   vertical-align: middle;
   position: absolute;
-  bottom: 16%;
-  right: 24%;
+  top: 50% !important;
+  left: 64% !important;
   margin-top: 4rem;
   margin-bottom: 5rem;
   display: inline-block;
