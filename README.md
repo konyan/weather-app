@@ -1,24 +1,24 @@
 <p align="center">
  <a href="https://github.com/konyan/ruby-job-scrapper">
-    <img src="./dist/img/banner.png" alt="Logo" width="680" height="auto">
+    <img src="./dist/img/weathery.png" alt="Logo" width="680" height="auto">
   </a>
-  <h3 align="center">Myanmar Restaurant</h3>
+  <h3 align="center">Weathery</h3>
 
   <p align="center">
-    Myanmar Food & Restaurant Template Design and Practice Tab Logic with Javascript DOM.
+    World Weather App Design and Minimalist Concept
     <br />
     <br />
-    <a href="https://konyan.github.io/myanmar-restaurant/index.html">View Demo</a>
+    <a href="https://konyan.github.io/weather-app/index.html">View Demo</a>
   </p>
 </p>
 
 ## About The Project
 
-<a href="https://github.com/konyan/ruby-job-scrapper">
-    <img src="./dist/img/project-img.png" alt="Logo" width="100%" height="auto">
+<a href="https://github.com/konyan/weather-app">
+    <img src="./dist/img/project-bg.png" alt="Logo" width="100%" height="auto">
   </a>
 
-Let’s use what we’ve learned and take a chance to continue practicing DOM manipulation by dynamically rendering a simple restaurant homepage! By the end, we are going to be using JavaScript alone to generate the entire contents of the website!
+Let’s use what we’ve learned and take a chance to continue practicing DOM manipulation by dynamically rendering a simple Weather App! By the end, we are going to be using JavaScript and Ajax call with JSON and alone to generate the entire contents of the website!
 
 ### Built With
 
@@ -53,5 +53,3 @@ Give a ⭐️ if you like this project!
 Thanks to
 
 - [CSS Tricks](https://css-tricks.com/controlling-css-animations-transitions-javascript/)
-- [Vertical Navigation by Alberto Hartzet](https://codepen.io/hrtzt/details/pgXMYb)
-- [Design by Mir Mohsin](https://www.uplabs.com/posts/restaurants-food-website-design)
