@@ -18,7 +18,7 @@
     "babel-preset-env": "^1.7.0",
     "eslint": "^7.0.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-import-resolver-webpack": "^0.8.4",
     "eslint-plugin-import": "^2.20.2",
     "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.43.0",
