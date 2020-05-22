@@ -48,6 +48,11 @@ const getData = ({ data, status }) => {
 
 const geoFunction = () => {
   if (navigator.geolocation) {
+    navigator.geolocation.watchPosition((error) => {
+      if (error.code === error.PERMISSION_DENIED) {
+        document.getElementById("alert").classList.remove("hide");
+      }
+    });
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = `lat=${position.coords.latitude}`;
       const lon = `lon=${position.coords.longitude}`;
@@ -57,7 +62,7 @@ const geoFunction = () => {
       });
     });
   } else {
-    alert("Your browser doesn't supoort geo location.");
+    document.getElementById("alert").classList.remove("hide");
   }
 };
 

@@ -16,6 +16,12 @@
 
   <body>
     <button id="find-me">Find Me</button>
+    <div class="alert hide" id="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';"
+        >&times;</span
+      >
+      <strong>Alert!</strong> Your browser doesn't supoort geo location.
+    </div>
     <section class="weather">
       <div class="card">
         <div class="card__wrapper">
@@ -34,22 +40,6 @@
             <p class="card__body--temp">79</p>
             <p class="card__body--deg">°C</p>
           </div>
-          <!-- <div class="card__footer">
-            <ul>
-              <li class="card__footer--item">
-                <div class="card__description--icon icon sun-shower drizzle">
-                  <div class="cloud"></div>
-                  <div class="sun">
-                    <div class="rays"></div>
-                  </div>
-                  <div class="rain"></div>
-                </div>
-                Today
-              </li>
-              <li class="card__footer--item">Firday</li>
-              <li class="card__footer--item">Saturday</li>
-            </ul>
-          </div> -->
         </div>
         <!-- <div class="loader hide">
           <span>{</span>
