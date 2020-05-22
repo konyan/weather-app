@@ -20,20 +20,27 @@ body {
   font-family: "Roboto Slab", serif;
   border-radius: 100px;
   width: 200px;
-  top: 1%;
+  top: 3%;
   font-weight: 500;
   color: #333;
-  transform: translate(-100px);
+  transform: translateX(-100px);
   cursor: pointer;
   -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
+  transition: all 0.5s;
+}
+
+#find-me:hover {
+  transform: scale(1.1) translateX(-105px);
 }
 
 .weather {
-  width: 26rem;
-  height: 48rem;
-  margin: 40vh auto;
-  transform: translateY(-40%);
+  width: 380px;
+  min-width: 360px;
+  min-height: 640px;
+  height: 700px;
+  margin: auto;
+  transform: translateY(20%);
   position: relative;
 }
 
