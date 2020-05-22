@@ -1,4 +1,4 @@
-export default DOM = {
+export default {
   findmeButton: document.getElementById("find-me"),
   tempBody: document.querySelector(".card__body--temp"),
   degBody: document.querySelector(".card__body--deg"),

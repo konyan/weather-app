@@ -1,37 +1,3 @@
-export default function (desc) {
-  var desc = desc.toLowerCase();
-  switch (desc) {
-    case "drizzle":
-      addIcon(desc);
-      break;
-    case "clouds":
-      addIcon(desc);
-      break;
-    case "rain":
-      addIcon(desc);
-      break;
-    case "snow":
-      addIcon(desc);
-      break;
-    case "clear":
-      addIcon(desc);
-      break;
-    case "thunderstorm":
-      addIcon(desc);
-      break;
-    default:
-      document
-        .querySelector(".card__description .clouds")
-        .classList.remove("hide");
-  }
-}
-
-function addIcon(desc) {
-  document
-    .querySelector(".card__description--icon-group")
-    .insertAdjacentHTML("afterbegin", dirzzleHtml);
-}
-
 const dirzzleHtml = `
 <div class="card__description--icon icon sun-shower drizzle"> <div class="cloud"></div> <div class="sun"> <div class="rays"></div> </div> <div class="rain"></div> </div>
 `;
@@ -53,3 +19,34 @@ const clearHtml = `
 
 const rainHtml = `
 <div class="card__description--icon icon rainy rain"> <div class="cloud"></div> <div class="rain"></div> </div>`;
+
+function addIcon(template) {
+  document
+    .querySelector(".card__description--icon-group")
+    .insertAdjacentHTML("afterbegin", template);
+}
+
+export default (desc) => {
+  switch (desc.toLowerCase()) {
+    case "drizzle":
+      addIcon(dirzzleHtml);
+      break;
+    case "clouds":
+      addIcon(cloudsHtml);
+      break;
+    case "rain":
+      addIcon(rainHtml);
+      break;
+    case "snow":
+      addIcon(snowHtml);
+      break;
+    case "clear":
+      addIcon(clearHtml);
+      break;
+    case "thunderstorm":
+      addIcon(thunderstormHtml);
+      break;
+    default:
+      addIcon(cloudsHtml);
+  }
+};

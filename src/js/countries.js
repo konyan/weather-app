@@ -1,4 +1,4 @@
-export default function (weatherCountry) {
+export default (weatherCountry) => {
   const isoCountries = {
     AF: "Afghanistan",
     AX: "Aland Islands",
@@ -246,8 +246,8 @@ export default function (weatherCountry) {
     ZM: "Zambia",
     ZW: "Zimbabwe",
   };
-  if (isoCountries.hasOwnProperty(weatherCountry)) {
+  if (Object.prototype.hasOwnProperty.call(isoCountries, weatherCountry)) {
     return isoCountries[weatherCountry];
   }
   return null;
-}
+};
