@@ -75,7 +75,7 @@ const getCityFunction = () => {
 DOM.findmeButton.addEventListener("click", geoFunction);
 DOM.degBody.addEventListener("click", changeDeg);
 DOM.findCityButton.addEventListener("click", getCityFunction);
-document.addEventListener("keypress", (event) => {
+document.addEventListener("keypress", (e) => {
   if (e.keyCode === 13 || e.which === 13) {
     getCityFunction();
   }
