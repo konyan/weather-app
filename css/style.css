@@ -14,24 +14,75 @@ body {
 }
 
 #find-me {
-  position: absolute;
-  padding: 16px 12px;
+  position: relative;
   font-size: 18px;
   font-family: "Roboto Slab", serif;
-  border-radius: 100px;
-  width: 200px;
-  top: 3%;
+  border-radius: 50%;
   font-weight: 500;
   color: #333;
-  transform: translateX(-100px);
   cursor: pointer;
   -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
   transition: all 0.5s;
+  margin-left: 1rem;
+}
+
+#find-me .fa-compass {
+  padding: 14px;
 }
 
 #find-me:hover {
-  transform: scale(1.1) translateX(-105px);
+  transform: scale(1.1);
+}
+.search__container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.searchbar {
+  margin-bottom: auto;
+  margin-top: auto;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 10px;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
+}
+
+.search_input {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color: transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input {
+  padding: 0 10px;
+  width: 450px;
+  caret-color: red;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon {
+  background: white;
+  color: #e74c3c;
+}
+
+.search_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
 }
 
 .alert {
@@ -65,7 +116,7 @@ body {
   min-height: 640px;
   height: 700px;
   margin: auto;
-  transform: translateY(20%);
+  transform: translateY(10%);
   position: relative;
 }
 
