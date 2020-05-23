@@ -1,4 +1,4 @@
-import api from "./api";
+import { apiCity, apiPosition } from "./api";
 import country from "./countries";
 import IconGen from "./weather";
 import DOM from "./dom";
@@ -38,11 +38,7 @@ const getData = ({ data, status }) => {
     DOM.placeHead.innerHTML = `<i class="card__heading--icon"> <img src="./img/place.png" alt="place" /> </i>${weatherPlace}`;
     DOM.desDescription.innerHTML = weatherDes;
 
-    // $(".card__description--des").text(weatherDes);
     IconGen("rain");
-    // $(".card__footer--temp").text(parseInt(weatherTemp));
-    // $(".card__heading--place").text(weatherPlace);
-    // $(".card__heading--country").text(weatherCountry);
   }
 };
 
@@ -56,7 +52,7 @@ const geoFunction = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = `lat=${position.coords.latitude}`;
       const lon = `lon=${position.coords.longitude}`;
-      const response = api(lat, lon);
+      const response = apiPosition(lat, lon);
       response.then((res) => {
         getData(res);
       });
@@ -66,13 +62,31 @@ const geoFunction = () => {
   }
 };
 
+const getCityFunction = () => {
+  const val = DOM.searchCityInput.value;
+  console.log("HELLO", val);
+  if (val != "") {
+    const response = apiCity(val);
+    response.then((res) => {
+      console.log("RES", res);
+      getData(res);
+    });
+  }
+};
+
 DOM.findmeButton.addEventListener("click", geoFunction);
 DOM.degBody.addEventListener("click", changeDeg);
-
+DOM.findCityButton.addEventListener("click", getCityFunction);
+document.addEventListener("keypress", function (e) {
+  if (e.keyCode === 13 || e.which === 13) {
+    getCityFunction();
+  }
+});
+// $(".card__description--des").text(weatherDes);
 // init
 
 const init = () => {
-  const response = api("lat=16.799376", "lon=96.1508655");
+  const response = apiPosition("lat=16.799376", "lon=96.1508655");
   response.then((res) => {
     getData(res);
   });

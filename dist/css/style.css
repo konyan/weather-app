@@ -13,6 +13,11 @@ body {
   text-align: center;
 }
 
+.fa-compass,
+.fa-search {
+  font-size: 1.5rem !important;
+}
+
 #find-me {
   position: relative;
   font-size: 18px;
@@ -25,6 +30,8 @@ body {
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
   transition: all 0.5s;
   margin-left: 1rem;
+  background-color: white;
+  border: none;
 }
 
 #find-me .fa-compass {
@@ -108,6 +115,13 @@ body {
 
 .closebtn:hover {
   color: black;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .weather {
