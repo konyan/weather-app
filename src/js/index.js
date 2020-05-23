@@ -64,11 +64,9 @@ const geoFunction = () => {
 
 const getCityFunction = () => {
   const val = DOM.searchCityInput.value;
-  console.log("HELLO", val);
-  if (val != "") {
+  if (val !== "") {
     const response = apiCity(val);
     response.then((res) => {
-      console.log("RES", res);
       getData(res);
     });
   }
@@ -77,7 +75,7 @@ const getCityFunction = () => {
 DOM.findmeButton.addEventListener("click", geoFunction);
 DOM.degBody.addEventListener("click", changeDeg);
 DOM.findCityButton.addEventListener("click", getCityFunction);
-document.addEventListener("keypress", function (e) {
+document.addEventListener("keypress", (event) => {
   if (e.keyCode === 13 || e.which === 13) {
     getCityFunction();
   }
